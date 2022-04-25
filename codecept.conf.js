@@ -12,9 +12,9 @@ exports.config = {
   output: "./output",
   helpers: {
     Puppeteer: {
-      url: "https://redux.facundogordillo.com/",
-      show: true,
-      windowSize: "1200x900",
+      url: "https://redux.facundogordillo.com",
+      // show: true,
+      waitForNavigation: "networkidle0",
     },
   },
   include: {
@@ -23,4 +23,9 @@ exports.config = {
   bootstrap: null,
   mocha: {},
   name: "codecepts-concept",
+  plugins: {
+    screenshotOnFail: {
+      enabled: true,
+    },
+  },
 };
